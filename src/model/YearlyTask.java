@@ -15,7 +15,7 @@ public class YearlyTask extends Task{
     }
 
     @Override
-    public LocalDateTime getTaskNextTime(LocalDateTime dateTime){ // для одноразовой задачи метод getTaskNextTime возвращает null
+    public LocalDateTime getTaskNextTime(LocalDateTime dateTime){
         return dateTime.plusYears(1);
     }
 }

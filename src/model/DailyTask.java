@@ -15,7 +15,8 @@ public class DailyTask extends Task{
     }
 
     @Override
-    public LocalDateTime getTaskNextTime(LocalDateTime dateTime){ // для одноразовой задачи метод getTaskNextTime возвращает null
+    public LocalDateTime getTaskNextTime(LocalDateTime dateTime){
+
         return dateTime.plusDays(1);
     }
 }

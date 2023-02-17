@@ -11,6 +11,7 @@ public abstract class Task implements Repeatable { //абстрактный кл
 
     private int id;
     private String title;
+
     private String description;
     private TaskType type;
     private LocalDateTime taskTime;
@@ -28,9 +29,9 @@ public abstract class Task implements Repeatable { //абстрактный кл
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
+//    public void setId(int id) {
+//        this.id = id;
+//    }
 
     public String getTitle() {
         return title;
@@ -77,7 +78,7 @@ public abstract class Task implements Repeatable { //абстрактный кл
         if (taskTime != null) {
             this.taskTime = taskTime;
         } else {
-            throw new IncorrectArgumentException("Дата и время задачи введена некорректно");
+            throw new IncorrectArgumentException("Дата и время задачи введены некорректно");
         }
     }
 
@@ -87,6 +88,7 @@ public abstract class Task implements Repeatable { //абстрактный кл
         if (o == null || getClass() != o.getClass()) return false;
         Task task = (Task) o;
         return id == task.id && title.equals(task.title) && description.equals(task.description) && type == task.type && taskTime.equals(task.taskTime);
+//        return title.equals(task.title) && description.equals(task.description) && type == task.type && taskTime.equals(task.taskTime);
     }
 
     @Override
