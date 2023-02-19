@@ -15,7 +15,7 @@ import java.util.Map;
  */
 
 public class TaskService {
-    public Map<Integer, Task> taskMap = new HashMap<>(); // создание коллекции taskMap типа "мапа" (словарь) для хранения задач
+    private final Map<Integer, Task> taskMap = new HashMap<>(); // создание коллекции taskMap типа "мапа" (словарь) для хранения задач
 
     public void addTask(Task task) {
         this.taskMap.put(task.getId(), task);
@@ -73,6 +73,7 @@ public class TaskService {
                 // с датой для которой нужен список задач
                 tasksByDay.add(task); // если даты совпадают, то задача записывается в возвращаемый этим методом массив tasksByDay
 //                break;
+                continue; // переходим к следующей итерации. У нас дата задачи уже совпала с датой, для которой нужен список задач, поэтому следующий код вычисления следующей даты не нужен
             }
 
             LocalDateTime taskNextTime = currentDateTime; // в переменную taskNextTime записывается дата и время присвоенные при создании задачи
